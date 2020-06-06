@@ -54,7 +54,7 @@ This project was developed wits the following technologies:
 - react-toastify
 - typescript
 
-### **React Native (Com o uso do Expo)**
+### **React Native (Using Expo)**
 
 - axios
 - expo-constants
