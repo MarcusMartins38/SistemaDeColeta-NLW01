@@ -70,8 +70,8 @@ You will need to have Node.js to run
 
 ### **Steps**
 
-git clone https://github.com/MarcusMartins38/SistemaDeColeta-NLW01.git
-  or
+git clone https://github.com/MarcusMartins38/SistemaDeColeta-NLW01.git </br>
+  or</br>
 git clone git@github.com:MarcusMartins38/SistemaDeColeta-NLW01.git
 
 npm install (Maybe you need to enter each folder and run this command)
