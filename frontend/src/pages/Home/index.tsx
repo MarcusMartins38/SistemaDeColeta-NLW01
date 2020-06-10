@@ -1,17 +1,32 @@
-import React from "react";
+import React, { useState } from "react";
 import { FiLogIn } from "react-icons/fi";
 import { Link } from "react-router-dom";
+
+import Button from "../../components/Button";
+import Modal from "../../components/Modal";
 
 import "./styles.css";
 
 import logo from "../../assets/logo.svg";
 
 const Home = () => {
+  const [modalOpen, setModalOpen] = useState(false);
+
+  function toggleModal(): void {
+    setModalOpen(!modalOpen);
+  }
+
   return (
     <div id="page-home">
       <div className="content">
         <header>
           <img src={logo} alt="Ecoleta" />
+          <Link to="/create-point">
+            <span>
+              <FiLogIn />
+            </span>
+            <strong>Cadastre um ponto de coleta</strong>
+          </Link>
         </header>
 
         <main>
@@ -20,12 +35,13 @@ const Home = () => {
             Ajudamos pessoas a encontrarem pontos de coleta de forma eficiente.
           </p>
 
-          <Link to="/create-point">
+          <Button openModal={toggleModal}>
             <span>
               <FiLogIn />
             </span>
-            <strong>Cadastre um ponto de coleta</strong>
-          </Link>
+            <strong>Encontre pontos de coleta</strong>
+          </Button>
+          <Modal isOpen={modalOpen} setIsOpen={toggleModal} />
         </main>
       </div>
     </div>

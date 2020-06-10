@@ -1,0 +1,38 @@
+.Container_Modal {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.Container_Modal h1 {
+  color: white;
+  font-size: 36px;
+  margin-bottom: 36px;
+}
+
+.Container_Modal select {
+  width: 450px;
+  height: 60px;
+  font-size: 20px;
+  margin-bottom: 24px;
+  border-radius: 10px;
+  border: 0;
+  padding: 0 15px;
+}
+
+.Container_Modal a {
+  text-decoration: none;
+  color: white;
+  background-color: var(--primary-color);
+  width: 450px;
+  height: 60px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 25px;
+}
+
+.Container_Modal svg {
+  margin-right: 10px;
+}
