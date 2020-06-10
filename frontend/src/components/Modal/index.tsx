@@ -66,12 +66,16 @@ const Modal: React.FC<IModalProps> = ({ isOpen, setIsOpen }) => {
     const uf = event.target.value;
 
     setSelectedUf(uf);
+
+    localStorage.setItem("@uf", uf);
   }
 
   function handleSelectCity(event: ChangeEvent<HTMLSelectElement>) {
     const city = event.target.value;
 
     setSelectedCity(city);
+
+    localStorage.setItem("@city", city);
   }
 
   return (

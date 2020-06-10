@@ -50,6 +50,26 @@ class PointsController {
     return response.json({ point: serializedPoint, items });
   }
 
+  async showByUfAndCity(request: Request, response: Response) {
+    const { city, uf } = request.query;
+
+    const points = await knex("points")
+      .join("point_items", "points.id", "=", "point_items.point_id")
+      .where("city", String(city))
+      .where("uf", String(uf))
+      .distinct()
+      .select("points.*");
+
+    const serializedPoints = points.map((point) => {
+      return {
+        ...point,
+        image_url: `http://192.168.100.7:3333/uploads/${point.image}`,
+      };
+    });
+
+    return response.json(serializedPoints);
+  }
+
   async create(request: Request, response: Response) {
     const {
       name,

@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { FiArrowLeft } from "react-icons/fi";
 
@@ -7,7 +7,16 @@ import logo from "../../assets/logo.svg";
 import "./styles.css";
 
 const FindPoints = () => {
-  useEffect(() => {}, []);
+  const [city, setCity] = useState<string>();
+  const [uf, setUf] = useState<string>();
+
+  useEffect(() => {
+    const ufStorage = localStorage.getItem("@uf");
+    const cityStorage = localStorage.getItem("@city");
+
+    setUf(JSON.stringify(ufStorage));
+    setCity(JSON.stringify(cityStorage));
+  }, [city, uf]);
 
   return (
     <div id="found_points">
