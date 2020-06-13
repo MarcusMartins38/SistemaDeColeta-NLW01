@@ -54,11 +54,8 @@ class PointsController {
     const { city, uf } = request.query;
 
     const points = await knex("points")
-      .join("point_items", "points.id", "=", "point_items.point_id")
       .where("city", String(city))
-      .where("uf", String(uf))
-      .distinct()
-      .select("points.*");
+      .where("uf", String(uf));
 
     const serializedPoints = points.map((point) => {
       return {
