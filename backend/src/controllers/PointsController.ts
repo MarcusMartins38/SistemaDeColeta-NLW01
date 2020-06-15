@@ -57,14 +57,23 @@ class PointsController {
       .where("city", String(city))
       .where("uf", String(uf));
 
-    const serializedPoints = points.map((point) => {
-      return {
-        ...point,
-        image_url: `http://192.168.100.7:3333/uploads/${point.image}`,
-      };
-    });
+    const serializedAllPoints = await Promise.all(
+      points.map(async (point) => {
+        const serializedPoint = {
+          ...point,
+          image_url: `http://192.168.100.7:3333/uploads/${point.image}`,
+        };
 
-    return response.json(serializedPoints);
+        const items = await knex("items")
+          .join("point_items", "items.id", "=", "point_items.item_id")
+          .where("point_items.point_id", point.id)
+          .select("items.title");
+
+        return { point: serializedPoint, items };
+      })
+    );
+
+    return response.json(serializedAllPoints);
   }
 
   async create(request: Request, response: Response) {
