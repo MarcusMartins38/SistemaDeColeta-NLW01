@@ -7,18 +7,24 @@ import logo from "../../assets/logo.svg";
 
 import "./styles.css";
 
-interface Point {
-  id: number;
-  name: string;
-  email: string;
-  whatsapp: string;
-  image_url: string;
-  latitude: number;
-  longitude: number;
+interface Data {
+  point: {
+    id: number;
+    image: string;
+    image_url: string;
+    name: string;
+    email: string;
+    whatsapp: string;
+    latitude: number;
+    longitude: number;
+  };
+  items: {
+    title: string;
+  }[];
 }
 
 const FindPoints = () => {
-  const [points, setPoints] = useState<Point[]>([]);
+  const [datas, setDatas] = useState<Data[]>([]);
 
   useEffect(() => {
     const ufStorage = localStorage.getItem("@uf");
@@ -32,7 +38,7 @@ const FindPoints = () => {
         },
       })
       .then((response) => {
-        setPoints(response.data);
+        setDatas(response.data);
       });
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
@@ -51,17 +57,25 @@ const FindPoints = () => {
       </div>
 
       <div id="card_container">
-        {points.map((point) => (
-          <div key={point.id} id="card">
-            <img alt="Não Possui foto" src={point.image_url} />
+        {datas.map((data) => (
+          <div key={data.point.id} id="card">
+            <img alt="Não Possui foto" src={data.point.image_url} />
 
-            <h1>{point.name}</h1>
-            <p>Lista de Items</p>
+            <h1>{data.point.name}</h1>
+            <p id="lista_title">Lista de Items :</p>
+
+            {data.items.map((item) => (
+              <p key={item.title} id="items">
+                {item.title}
+              </p>
+            ))}
 
             <div id="endereco">
-              <p>{point.email}</p>
-              <p>{point.whatsapp}</p>
-              <p>{`Lat.:${point.latitude} Long.:${point.longitude}`} </p>
+              <p>{data.point.email}</p>
+              <p>{data.point.whatsapp}</p>
+              <p>
+                {`Lat.:${data.point.latitude} Long.:${data.point.longitude}`}{" "}
+              </p>
             </div>
           </div>
         ))}
