@@ -4,7 +4,13 @@
 <img src="./.github/Home.png" width=550 align="center" />
 </p>
 
-## **Intro**
+## Sumary
+[Intro](#intro) :door:  
+[How it works](#how-it-works) :open_book:  
+[Technologies](#technologies) :computer:  
+[How can I use ?](#how-can-i-use-) :open_book: 
+
+## Intro
 
 Next Level Week is a new event to discover **the power of some technologies and tools, learn new concepts and get new skills**. During this intense week, we get access to content **focused on the practice** of technologies that are used by big companies like Facebook, Netflix, Airbnb and many others. Besides having access to an **exclusive community** with Rocketseat instructors and thousands of other developers. The main technologies used in this event:
 
@@ -14,7 +20,7 @@ Next Level Week is a new event to discover **the power of some technologies and
 
 We developed a application called **Ecoleta** where the porpose of this project, it's help people to find collection points easier way.
 
-## **How it works**
+## How it works
 In the website of the application, you can register a collection point
 
 <p align="center">
@@ -27,11 +33,11 @@ And in the mobile, you can see the location of the points in a map, and some inf
 <img src="./.github/MobileVideo.gif" width=250 height align="center" />
 </p>
 
-## **Technologies**
+## Technologies
 
 This project was developed wits the following technologies:
 
-### **NodeJs**
+### NodeJs
 
 - celebrate
 - cors
@@ -42,7 +48,7 @@ This project was developed wits the following technologies:
 - ts-node
 - typescript
 
-### **ReactJs**
+### ReactJs
 
 - axios
 - leaflet
@@ -54,7 +60,7 @@ This project was developed wits the following technologies:
 - react-toastify
 - typescript
 
-### **React Native (Using Expo)**
+### React Native (Using Expo)
 
 - axios
 - expo-constants
@@ -64,18 +70,31 @@ This project was developed wits the following technologies:
 - react-native-safe-area-context
 - react-native-svg
 
-## **How can I use ?**
+## How can I use ?
 
 You will need to have Node.js to run
 
-### **Steps**
+### Steps
 
-git clone https://github.com/MarcusMartins38/SistemaDeColeta-NLW01.git </br>
-  or</br>
-git clone git@github.com:MarcusMartins38/SistemaDeColeta-NLW01.git
+With Yarn
+```
+$ git clone https://github.com/MarcusMartins38/SistemaDeColeta-NLW01.git
+$ cd SistemaDeColeta-NLW01/backend
+$ yarn
+$ yarn dev
+$ cd SistemaDeColeta-NLW01/frontend or cd SistemaDeColeta-NLW01/mobile
+$ yarn
+$ yarn start
+```
 
-npm install (Maybe you need to enter each folder and run this command)
+With Npm
 
-cd backend
-npm dev
-
+```
+$ git clone https://github.com/MarcusMartins38/SistemaDeColeta-NLW01.git
+$ cd SistemaDeColeta-NLW01/backend
+$ npm install
+$ npm dev
+$ cd SistemaDeColeta-NLW01/frontend or cd GoBarberApplication/appgobarber
+$ npm install
+$ npm start
+```
