@@ -1,5 +1,7 @@
 # Sistema De Coleta - NLW01
 
+#### Linguagens: English or <a href="https://github.com/MarcusMartins38/SistemaDeColeta-NLW01/blob/master/README-pt.md">Português<a/>  
+
 <p align="center">
 <img src="./.github/Home.png" width=550 align="center" />
 </p>
@@ -23,7 +25,7 @@ Next Level Week is a new event to discover **the power of some technologies and
 We developed a application called **Ecoleta** where the porpose of this project, it's help people to find collection points easier way.
 
 ## How it works
-In the website of the application, you can register a collection point
+In the website of the application, you can register a collection point, and you can see the points registered in some states.
 
 <p align="center">
 <img src="./.github/DesktopVide.gif" width=750 align="center" />
