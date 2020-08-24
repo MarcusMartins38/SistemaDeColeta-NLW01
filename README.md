@@ -12,6 +12,8 @@
 
 ## Intro
 
+**Obs: I did some changes, applying some my ideias, to be , in some way, different of others and to improve some of my skills. Probably I will do some more changes hehe**  
+
 Next Level Week is a new event to discover **the power of some technologies and tools, learn new concepts and get new skills**. During this intense week, we get access to content **focused on the practice** of technologies that are used by big companies like Facebook, Netflix, Airbnb and many others. Besides having access to an **exclusive community** with Rocketseat instructors and thousands of other developers. The main technologies used in this event:
 
 - Node.js for back-end;
