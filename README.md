@@ -37,7 +37,7 @@ And in the mobile, you can see the location of the points in a map, and some inf
 
 This project was developed wits the following technologies:
 
-### NodeJs
+### NodeJs (TypeScript)
 
 - celebrate
 - cors
@@ -46,9 +46,8 @@ This project was developed wits the following technologies:
 - sqlite3
 - multer
 - ts-node
-- typescript
 
-### ReactJs
+### ReactJs (TypeScript)
 
 - axios
 - leaflet
@@ -58,9 +57,8 @@ This project was developed wits the following technologies:
 - react-icons
 - react-leaflet
 - react-toastify
-- typescript
 
-### React Native (Using Expo)
+### React Native (Using Expo)(TypeScript)
 
 - axios
 - expo-constants
