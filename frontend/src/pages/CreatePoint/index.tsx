@@ -7,7 +7,7 @@ import api from "../../services/api";
 
 import Dropzone from "../../components/Dropzone";
 
-import "./styles.css";
+import { Container, Form, Field, FieldGroup, ItemsGrid } from "./styles";
 
 import logo from "../../assets/logo.svg";
 import axios from "axios";
@@ -162,7 +162,7 @@ const CreatePoint = () => {
   }
 
   return (
-    <div id="page-create-point">
+    <Container>
       <header>
         <img src={logo} alt="Ecoleta" />
 
@@ -172,7 +172,7 @@ const CreatePoint = () => {
         </Link>
       </header>
 
-      <form onSubmit={handleSubmit}>
+      <Form onSubmit={handleSubmit}>
         <h1>
           Cadastro do <br /> ponto de coleta
         </h1>
@@ -184,7 +184,7 @@ const CreatePoint = () => {
             <h2>Dados</h2>
           </legend>
 
-          <div className="field">
+          <Field>
             <label htmlFor="name">Nome da entidade</label>
             <input
               type="text"
@@ -192,10 +192,10 @@ const CreatePoint = () => {
               id="name"
               onChange={handleInputChange}
             />
-          </div>
+          </Field>
 
-          <div className="field-group">
-            <div className="field">
+          <FieldGroup>
+            <Field>
               <label htmlFor="email">E-mail</label>
               <input
                 type="email"
@@ -203,8 +203,8 @@ const CreatePoint = () => {
                 id="email"
                 onChange={handleInputChange}
               />
-            </div>
-            <div className="field">
+            </Field>
+            <Field>
               <label htmlFor="whatsapp">Whatsapp</label>
               <input
                 type="text"
@@ -212,8 +212,8 @@ const CreatePoint = () => {
                 id="whatsapp"
                 onChange={handleInputChange}
               />
-            </div>
-          </div>
+            </Field>
+          </FieldGroup>
         </fieldset>
 
         <fieldset>
@@ -230,8 +230,8 @@ const CreatePoint = () => {
             <Marker position={selectedPosition} />
           </Map>
 
-          <div className="field-group">
-            <div className="field">
+          <FieldGroup>
+            <Field>
               <label htmlFor="uf">Estado (UF)</label>
               <select
                 onChange={handleSelectUf}
@@ -246,9 +246,9 @@ const CreatePoint = () => {
                   </option>
                 ))}
               </select>
-            </div>
+            </Field>
 
-            <div className="field">
+            <Field>
               <label htmlFor="city">Cidade</label>
               <select
                 name="city"
@@ -263,8 +263,8 @@ const CreatePoint = () => {
                   </option>
                 ))}
               </select>
-            </div>
-          </div>
+            </Field>
+          </FieldGroup>
         </fieldset>
 
         <fieldset>
@@ -273,7 +273,7 @@ const CreatePoint = () => {
             <span>Selecione um ou mais itens abaixo</span>
           </legend>
 
-          <ul className="items-grid">
+          <ItemsGrid>
             {items.map((item) => (
               <li
                 key={item.id}
@@ -284,12 +284,12 @@ const CreatePoint = () => {
                 <span>{item.title}</span>
               </li>
             ))}
-          </ul>
+          </ItemsGrid>
         </fieldset>
 
         <button type="submit">Cadastrar ponto de coleta</button>
-      </form>
-    </div>
+      </Form>
+    </Container>
   );
 };
 
