@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { FiLogIn } from "react-icons/fi";
 import { Link } from "react-router-dom";
+import ToggleButton from "../../components/ToggleSwitchTheme";
 
 import Button from "../../components/Button";
 import Modal from "../../components/Modal";
@@ -21,6 +22,7 @@ const Home = () => {
       <Content>
         <header>
           <img src={logo} alt="Ecoleta" />
+          <ToggleButton />
           <Link to="/create-point">
             <span>
               <FiLogIn />

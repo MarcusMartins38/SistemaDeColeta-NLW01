@@ -9,7 +9,7 @@ export const Header = styled.div`
   height: 400px;
   border: 1px solid transparent;
 
-  background-color: #dbfbed;
+  background-color: ${(props) => props.theme.colors.header.background};
 
   header {
     width: 100%;
@@ -22,7 +22,7 @@ export const Header = styled.div`
     justify-content: space-between;
     align-items: center;
     a {
-      color: var(--title-color);
+      color: ${(props) => props.theme.colors.titlesColor.color};
       font-weight: bold;
       text-decoration: none;
 
@@ -50,9 +50,9 @@ export const Content = styled.div`
 
 export const Card = styled.div`
   max-width: 300px;
-  height: 500px;
+  height: 550px;
   border-radius: 10px;
-  border: 2px solid black;
+  border: 2px solid ${(props) => props.theme.colors.header.border};
 
   display: flex;
   flex-direction: column;

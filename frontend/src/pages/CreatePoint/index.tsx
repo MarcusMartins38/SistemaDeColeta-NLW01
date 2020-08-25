@@ -5,6 +5,7 @@ import { Map, TileLayer, Marker } from "react-leaflet";
 import { LeafletMouseEvent } from "leaflet";
 import api from "../../services/api";
 
+import ToggleButton from "../../components/ToggleSwitchTheme";
 import Dropzone from "../../components/Dropzone";
 
 import { Container, Form, Field, FieldGroup, ItemsGrid } from "./styles";
@@ -165,6 +166,7 @@ const CreatePoint = () => {
     <Container>
       <header>
         <img src={logo} alt="Ecoleta" />
+        <ToggleButton />
 
         <Link to="/">
           <FiArrowLeft />

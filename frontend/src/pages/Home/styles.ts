@@ -30,7 +30,7 @@ export const Content = styled.div`
     a {
       text-decoration: none;
       font-size: 18px;
-      color: var(--title-color);
+      color: ${(props) => props.theme.colors.titlesColor.color};
       display: flex;
       align-items: center;
 
@@ -62,13 +62,14 @@ export const Main = styled.main`
 
   h1 {
     font-size: 54px;
-    color: var(--title-color);
+    color: ${(props) => props.theme.colors.titlesColor.color};
   }
 
   p {
     font-size: 24px;
     margin-top: 24px;
     line-height: 38px;
+    color: ${(props) => props.theme.colors.body.color};
   }
 
   button {

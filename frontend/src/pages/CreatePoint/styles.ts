@@ -14,7 +14,7 @@ export const Container = styled.div`
     align-items: center;
 
     a {
-      color: var(--title-color);
+      color: ${(props) => props.theme.colors.titlesColor.color};
       font-weight: bold;
       text-decoration: none;
 
@@ -51,7 +51,7 @@ export const Form = styled.form`
   margin: 80px auto;
   padding: 64px;
   max-width: 730px;
-  background: #fff;
+  background: ${(props) => props.theme.colors.form.background};
   border-radius: 8px;
 
   display: flex;
@@ -81,7 +81,7 @@ export const Form = styled.form`
     span {
       font-size: 14px;
       font-weight: normal;
-      color: var(--text-color);
+      color: ${(props) => props.theme.colors.body.color};
     }
   }
 
@@ -94,7 +94,7 @@ export const Form = styled.form`
 `;
 
 export const FieldGroup = styled.div`
-  /* flex: 1; */
+  flex: 1;
   display: flex;
 
   div + div {
@@ -159,7 +159,7 @@ export const ItemsGrid = styled.ul`
   list-style: none;
 
   li {
-    background: #f5f5f5;
+    background: ${(props) => props.theme.colors.form.card};
     border: 2px solid #f5f5f5;
     height: 180px;
     border-radius: 8px;
@@ -180,7 +180,7 @@ export const ItemsGrid = styled.ul`
 
       display: flex;
       align-items: center;
-      color: var(--title-color);
+      color: ${(props) => props.theme.colors.form.spanCard};
     }
   }
   li.selected {

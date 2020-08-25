@@ -3,6 +3,8 @@ import { Link } from "react-router-dom";
 import { FiArrowLeft } from "react-icons/fi";
 import api from "../../services/api";
 
+import ToggleButton from "../../components/ToggleSwitchTheme";
+
 import logo from "../../assets/logo.svg";
 
 import { Container, Header, Content, Card, Items, Address } from "./styles";
@@ -48,7 +50,7 @@ const FindPoints = () => {
       <Header>
         <header>
           <img src={logo} alt="Ecoleta" />
-
+          <ToggleButton />
           <Link to="/">
             <FiArrowLeft />
             Voltar para home

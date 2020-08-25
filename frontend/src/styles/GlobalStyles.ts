@@ -1,3 +1,7 @@
+import { createGlobalStyle } from "styled-components";
+
+export default createGlobalStyle`
+
 :root {
   --primary-color: #34cb79;
   --title-color: #322153;
@@ -11,9 +15,9 @@
 }
 
 body {
-  background: #f0f0f5;
+  background: ${(props) => props.theme.colors.body.background};
   -webkit-font-smoothing: antialiased;
-  color: var(--text-color);
+  color: ${(props) => props.theme.colors.body.color};
 }
 
 body,
@@ -28,6 +32,8 @@ h3,
 h4,
 h5,
 h6 {
-  color: var(--title-color);
+  color: ${(props) => props.theme.colors.titlesColor.color};
   font-family: Ubuntu;
 }
+
+`;
