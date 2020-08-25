@@ -5,7 +5,8 @@ import { Link } from "react-router-dom";
 import Button from "../../components/Button";
 import Modal from "../../components/Modal";
 
-import "./styles.css";
+// import "./styles.css";
+import { Container, Content, Main } from "./styles";
 
 import logo from "../../assets/logo.svg";
 
@@ -17,8 +18,8 @@ const Home = () => {
   }
 
   return (
-    <div id="page-home">
-      <div className="content">
+    <Container>
+      <Content>
         <header>
           <img src={logo} alt="Ecoleta" />
           <Link to="/create-point">
@@ -29,7 +30,7 @@ const Home = () => {
           </Link>
         </header>
 
-        <main>
+        <Main>
           <h1>Seu marketplace de coleta de resíduos.</h1>
           <p>
             Ajudamos pessoas a encontrarem pontos de coleta de forma eficiente.
@@ -42,9 +43,9 @@ const Home = () => {
             <strong>Encontre pontos de coleta</strong>
           </Button>
           <Modal isOpen={modalOpen} setIsOpen={toggleModal} />
-        </main>
-      </div>
-    </div>
+        </Main>
+      </Content>
+    </Container>
   );
 };
 
