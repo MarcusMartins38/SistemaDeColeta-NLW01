@@ -5,7 +5,7 @@ import api from "../../services/api";
 
 import logo from "../../assets/logo.svg";
 
-import "./styles.css";
+import { Container, Header, Content, Card, Items, Address } from "./styles";
 
 interface Data {
   point: {
@@ -44,8 +44,8 @@ const FindPoints = () => {
   }, []);
 
   return (
-    <div id="found_points">
-      <div id="header_div">
+    <Container>
+      <Header>
         <header>
           <img src={logo} alt="Ecoleta" />
 
@@ -54,33 +54,31 @@ const FindPoints = () => {
             Voltar para home
           </Link>
         </header>
-      </div>
+      </Header>
 
-      <div id="card_container">
+      <Content>
         {datas.map((data) => (
-          <div key={data.point.id} id="card">
+          <Card key={data.point.id}>
             <img alt="Não Possui foto" src={data.point.image_url} />
 
             <h1>{data.point.name}</h1>
-            <p id="lista_title">Lista de Items :</p>
+            <p>Lista de Items :</p>
 
             {data.items.map((item) => (
-              <p key={item.title} id="items">
-                {item.title}
-              </p>
+              <Items>{item.title}</Items>
             ))}
 
-            <div id="endereco">
+            <Address>
               <p>{data.point.email}</p>
               <p>{data.point.whatsapp}</p>
               <p>
                 {`Lat.:${data.point.latitude} Long.:${data.point.longitude}`}{" "}
               </p>
-            </div>
-          </div>
+            </Address>
+          </Card>
         ))}
-      </div>
-    </div>
+      </Content>
+    </Container>
   );
 };
 

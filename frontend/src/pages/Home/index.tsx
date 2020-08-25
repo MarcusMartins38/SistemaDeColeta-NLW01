@@ -5,7 +5,6 @@ import { Link } from "react-router-dom";
 import Button from "../../components/Button";
 import Modal from "../../components/Modal";
 
-// import "./styles.css";
 import { Container, Content, Main } from "./styles";
 
 import logo from "../../assets/logo.svg";
