@@ -1,4 +1,4 @@
-# Sistema De Coleta - NLW01
+# Ecoleta (Sistema De Coleta)
 
 #### Linguagens: <a href="https://github.com/MarcusMartins38/SistemaDeColeta-NLW01">English<a/> ou Português  
 
