@@ -54,6 +54,7 @@ Esse projeto foi desenvolvido com as seguintes tecnologias:
 
 ### ReactJs (TypeScript)
 
+- styled-components
 - axios
 - leaflet
 - react-icons
