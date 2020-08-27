@@ -59,26 +59,30 @@ const FindPoints = () => {
       </Header>
 
       <Content>
-        {datas.map((data) => (
-          <Card key={data.point.id}>
-            <img alt="Não Possui foto" src={data.point.image_url} />
+        {datas.map((data) => {
+          const formattedWhatsapp = data.point.whatsapp.split(".0");
 
-            <h1>{data.point.name}</h1>
-            <p>Lista de Items :</p>
+          return (
+            <Card key={data.point.id}>
+              <img alt="Não Possui foto" src={data.point.image_url} />
 
-            {data.items.map((item) => (
-              <Items>{item.title}</Items>
-            ))}
+              <h1>{data.point.name}</h1>
+              <h2>Lista de Items :</h2>
 
-            <Address>
-              <p>{data.point.email}</p>
-              <p>{data.point.whatsapp}</p>
-              <p>
-                {`Lat.:${data.point.latitude} Long.:${data.point.longitude}`}{" "}
-              </p>
-            </Address>
-          </Card>
-        ))}
+              {data.items.map((item) => (
+                <Items key={item.title}>{item.title}</Items>
+              ))}
+
+              <Address>
+                <h2>Contato :</h2>
+                <p>{data.point.email}</p>
+                <p>{formattedWhatsapp[0]}</p>
+                <p>{`Lat.: ${data.point.latitude} `}</p>
+                <p>{`Long.: ${data.point.longitude}`}</p>
+              </Address>
+            </Card>
+          );
+        })}
       </Content>
     </Container>
   );

@@ -50,7 +50,7 @@ export const Content = styled.div`
 
 export const Card = styled.div`
   max-width: 300px;
-  height: 550px;
+  height: 600px;
   border-radius: 10px;
   border: 2px solid ${(props) => props.theme.colors.header.border};
 
@@ -69,24 +69,30 @@ export const Card = styled.div`
     margin-bottom: 25px;
   }
 
-  p {
-    font-size: 18px;
+  h2 {
+    font-size: 24px;
     color: var(--primary-color);
     font-weight: bold;
     margin-left: 10px;
+    text-decoration: underline;
   }
 `;
 
-export const Items = styled.p`
+export const Items = styled.div`
   margin-left: 10px;
   font-weight: bold;
+  color: #2aa260;
+  text-decoration: none;
 `;
 
 export const Address = styled.div`
   margin-top: 15px;
 
   p {
+    color: var(--primary-color);
     margin: 5px 0;
     margin-left: 10px;
+    font-size: 16px;
+    text-decoration: none;
   }
 `;
