@@ -1,9 +1,10 @@
-# Sistema De Coleta - NLW01
+# Ecoleta (Collection System)
 
 #### Linguagens: English or <a href="https://github.com/MarcusMartins38/SistemaDeColeta-NLW01/blob/master/README-pt.md">Português<a/>  
 
 <p align="center">
-<img src="./.github/Home.png" width=550 align="center" />
+<img src="./.github/Home.png" width=350 align="center" />
+<img src="./.github/DarkMode.png" width=350 align="center" />
 </p>
 
 ## Sumary
@@ -53,6 +54,7 @@ This project was developed wits the following technologies:
 
 ### ReactJs (TypeScript)
 
+- styled-components
 - axios
 - leaflet
 - react-icons
