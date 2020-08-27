@@ -1,6 +1,23 @@
 import { Request, Response } from "express";
+import { networkInterfaces } from "os";
 
 import knex from "../database/connection";
+
+const nets = networkInterfaces();
+const results = Object.create(null);
+
+for (const name of Object.keys(nets)) {
+  for (const net of nets[name]) {
+    if (net.family === "IPv4" && !net.internal) {
+      if (!results[name]) {
+        results[name] = [];
+      }
+      results[name].push(net.address);
+    }
+  }
+}
+
+const machineIp = results.enp2s0[0];
 
 class PointsController {
   async index(request: Request, response: Response) {
@@ -21,7 +38,8 @@ class PointsController {
     const serializedPoints = points.map((point) => {
       return {
         ...point,
-        image_url: `http://192.168.100.7:3333/uploads/${point.image}`,
+        // image_url: `http://192.168.100.7:3333/uploads/${point.image}`,
+        image_url: `http://${machineIp}:3333/uploads/${point.image}`,
       };
     });
 
@@ -39,7 +57,7 @@ class PointsController {
 
     const serializedPoint = {
       ...point,
-      image_url: `http://192.168.100.7:3333/uploads/${point.image}`,
+      image_url: `http://${machineIp}:3333/uploads/${point.image}`,
     };
 
     const items = await knex("items")
@@ -61,7 +79,7 @@ class PointsController {
       points.map(async (point) => {
         const serializedPoint = {
           ...point,
-          image_url: `http://192.168.100.7:3333/uploads/${point.image}`,
+          image_url: `http://${machineIp}:3333/uploads/${point.image}`,
         };
 
         const items = await knex("items")
